@@ -1,0 +1,26 @@
+{
+  "name": "call-last"
+, "author": "Beau Sorensen <mail@beausorensen.com> (http://github.com/sorensen)"
+, "version": "0.0.1"
+, "license": "MIT"
+, "keywords": ["callback"]
+, "description": "Call the last function argument"
+, "repository": {
+    "type": "git"
+  , "url": "git://github.com/sorensen/call-last.js.git"
+  }
+, "engines": {
+    "node": "0.x"
+  }
+, "main": "index.js"
+, "scripts": {
+    "test": "npm run hint && ./node_modules/mocha/bin/mocha -R spec test.js"
+  , "hint": "jshint *.js *.json"
+  }
+, "dependencies": {
+    "var-type": "^0.0.2"
+  }
+, "devDependencies": {
+    "mocha": "^2.1.0"
+  }
+}
