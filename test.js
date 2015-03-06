@@ -1,8 +1,10 @@
 'use strict';
 
-var assert = require('assert')
+var info = require('./package.json')
+  , assert = require('assert')
+  , ase = assert.strictEqual
 
-describe('call-last', function() {
+describe(info.name + ' - v' + info.version, function() {
   var last = require('./index')
 
   it('async', function(done) {
@@ -10,6 +12,20 @@ describe('call-last', function() {
 
     last(done, done, 2, 4, function() {
       check = 1
+      done()
+    })
+
+    assert.strictEqual(check, 0)
+  })
+
+  it('with', function(done) {
+    var check = 0
+      , callWith = last.with(null, 'hello')
+
+    callWith(done, done, 2, 4, function(err, str) {
+      check = 1
+      ase(err, null)
+      ase(str, 'hello')
       done()
     })
 

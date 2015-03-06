@@ -30,4 +30,12 @@ redis.set = callLast
 
 // run things synchronously if you want
 something.method = callLast.sync
+
+// bind some arguments
+var callWith = callLast.with('hello', 'world')
+
+callWith(1, 2, function(a, b) {
+  console.log(a) // 'hello'
+  console.log(b) // 'world'
+})
 ```
